@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-syne: 'Syne', sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #080810;
+  color: #e2e8f0;
+  font-family: var(--font-syne);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0f0f1a; }
+::-webkit-scrollbar-thumb { background: #1e1e2e; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+
+/* Selection */
+::selection { background: rgba(99,102,241,0.3); color: #e2e8f0; }
+
+/* Grid background */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(99,102,241,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 30px rgba(99,102,241,0.3), 0 0 60px rgba(99,102,241,0.1);
+}
+
+.glow-text {
+  text-shadow: 0 0 30px rgba(99,102,241,0.5);
+}
+
+/* Code editor */
+.code-editor {
+  font-family: var(--font-jetbrains);
+  font-size: 13px;
+  line-height: 1.7;
+  caret-color: #6366f1;
+  tab-size: 2;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-fade-up { animation: fadeUp 0.5s ease forwards; }
+.animate-slide-in { animation: slideIn 0.3s ease forwards; }
+
+.stagger-1 { animation-delay: 0.1s; opacity: 0; }
+.stagger-2 { animation-delay: 0.2s; opacity: 0; }
+.stagger-3 { animation-delay: 0.3s; opacity: 0; }
+.stagger-4 { animation-delay: 0.4s; opacity: 0; }
+
+/* Skeleton loader */
+.skeleton {
+  background: linear-gradient(90deg, #1e1e2e 25%, #252535 50%, #1e1e2e 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+
+/* Score colors */
+.score-red { color: #f87171; }
+.score-yellow { color: #fbbf24; }  
+.score-green { color: #34d399; }
+
+.score-bg-red { background: rgba(248,113,113,0.1); border-color: rgba(248,113,113,0.2); }
+.score-bg-yellow { background: rgba(251,191,36,0.1); border-color: rgba(251,191,36,0.2); }
+.score-bg-green { background: rgba(52,211,153,0.1); border-color: rgba(52,211,153,0.2); }
+
+/* Markdown styles in feedback */
+.feedback-content h1, .feedback-content h2, .feedback-content h3 {
+  color: #e2e8f0;
+  font-weight: 600;
+  margin: 16px 0 8px;
+}
+.feedback-content h3 { font-size: 14px; color: #818cf8; }
+.feedback-content p { color: #94a3b8; line-height: 1.7; margin-bottom: 8px; }
+.feedback-content ul, .feedback-content ol { 
+  color: #94a3b8; padding-left: 20px; margin-bottom: 8px; 
+}
+.feedback-content li { margin-bottom: 4px; line-height: 1.6; }
+.feedback-content code { 
+  background: #1e1e2e; color: #818cf8; 
+  padding: 2px 6px; border-radius: 4px; 
+  font-family: var(--font-jetbrains); font-size: 12px; 
+}
+.feedback-content pre {
+  background: #0f0f1a; border: 1px solid #1e1e2e;
+  border-radius: 8px; padding: 16px; margin: 12px 0;
+  overflow-x: auto;
+}
+.feedback-content pre code {
+  background: none; padding: 0; color: #94a3b8;
+}
+.feedback-content strong { color: #e2e8f0; font-weight: 600; }
+.feedback-content table {
+  width: 100%; border-collapse: collapse; margin: 12px 0;
+  font-size: 13px;
+}
+.feedback-content th {
+  background: #1e1e2e; color: #818cf8;
+  padding: 8px 12px; text-align: left; font-weight: 500;
+}
+.feedback-content td {
+  padding: 8px 12px; border-bottom: 1px solid #1e1e2e;
+  color: #94a3b8;
+}
+.feedback-content hr { border: none; border-top: 1px solid #1e1e2e; margin: 16px 0; }
