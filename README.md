@@ -85,8 +85,8 @@ docker-compose up --build
 ```
 
 App will be available at:
-- Frontend → http://localhost:3000
-- Backend API → http://localhost:8080
+- Frontend → https://dsa-reviewer-ui-9xtr.vercel.app/review
+- Backend API → dsa-reviewer-production.up.railway.app
 
 ### Environment Variables
 
@@ -169,8 +169,6 @@ Strongly typed, production-grade backend with built-in dependency injection, sec
 
 ---
 
-## Author
-
-**Diksha** — Backend Engineer  
+## Made with ❤️ and lots of ☕️,Debugging 👩🏼‍💻 by ✨Diksha✨
 [GitHub](https://github.com/Diksha238)
 
