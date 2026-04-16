@@ -12,7 +12,8 @@ import java.util.Map;
 @Service
 public class GroqService {
 
-    private String apiToken = "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";
+    @Value("${groq.api.token}")
+    private String apiToken;
 
     @Value("${groq.api.url}")
     private String apiUrl;
@@ -28,7 +29,7 @@ public class GroqService {
         String prompt = buildPrompt(code, language, problemDescription);
 
         Map<String, Object> requestBody = Map.of(
-                "model", "openai/gpt-oss-120b",
+                "model", "llama3-70b-8192",
                 "messages", List.of(
                         Map.of("role", "user", "content", prompt)
                 ),
