@@ -29,7 +29,7 @@ public class GroqService {
         String prompt = buildPrompt(code, language, problemDescription);
 
         Map<String, Object> requestBody = Map.of(
-                "model", "llama3-70b-8192",
+                "model", "llama-3.3-70b-versatile",
                 "messages", List.of(
                         Map.of("role", "user", "content", prompt)
                 ),
