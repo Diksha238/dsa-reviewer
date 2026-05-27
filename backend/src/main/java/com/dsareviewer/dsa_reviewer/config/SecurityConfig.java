@@ -44,7 +44,11 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:3000", "https://dsa-reviewer-ui-9xtr.vercel.app"));
+        config.setAllowedOrigins(List.of(
+    "http://localhost:3000", 
+    "https://dsa-reviewer-ui-9xtr.vercel.app",
+    "https://dsa-reviewer-ui-s599.vercel.app"
+));
         config.setAllowedMethods(
                 List.of("GET","POST","PUT","DELETE","OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
